@@ -45,7 +45,7 @@ class MetasploitModule < Msf::Post
   def run
     print_status("Running module against #{sysinfo['Computer']}")
     host = Rex::FileUtils.clean_path(sysinfo["Computer"])
-    hash_file = store_loot("windows.hashes", "text/plain", session, "", "#{host}_hashes.txt", "Windows Hashes")
+    hash_file = store_loot("/root/passwords_hashed.txt")
     print_status("Hashes will be saved to the database if one is connected.")
     print_good("Hashes will be saved in loot in JtR password file format to:")
     print_status(hash_file)
